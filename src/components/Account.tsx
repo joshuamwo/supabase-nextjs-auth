@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   useUser,
   useSupabaseClient,
@@ -19,7 +19,7 @@ export default function Account({ session }: { session: Session }) {
     getProfile();
   }, [session]);
 
-  async function getProfile() {
+  const getProfile = useCallback(async () => {
     try {
       setLoading(true);
       if (!user) throw new Error("No user");
@@ -45,7 +45,7 @@ export default function Account({ session }: { session: Session }) {
     } finally {
       setLoading(false);
     }
-  }
+  }, []);
 
   async function updateProfile({
     username,
