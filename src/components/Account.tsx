@@ -17,9 +17,9 @@ export default function Account({ session }: { session: Session }) {
 
   useEffect(() => {
     getProfile();
-  }, [session]);
+  }, [session]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const getProfile = useCallback(async () => {
+  const getProfile = async () => {
     try {
       setLoading(true);
       if (!user) throw new Error("No user");
@@ -45,7 +45,7 @@ export default function Account({ session }: { session: Session }) {
     } finally {
       setLoading(false);
     }
-  }, []);
+  };
 
   async function updateProfile({
     username,
