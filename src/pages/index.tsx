@@ -8,7 +8,7 @@ const Home = () => {
   const supabase = useSupabaseClient();
 
   return (
-    <div className="container" style={{ padding: "50px 0 100px 0" }}>
+    <div className="w-full" style={{ padding: "50px 0 100px 0" }}>
       {!session ? (
         <div className="flex justify-center">
           <Auth
@@ -18,7 +18,9 @@ const Home = () => {
           />
         </div>
       ) : (
-        <Account session={session} />
+        <div className="w-full">
+          <Account session={session} />
+        </div>
       )}
     </div>
   );

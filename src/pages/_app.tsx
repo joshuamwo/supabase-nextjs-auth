@@ -19,11 +19,10 @@ function MyApp({
     <SessionContextProvider
       supabaseClient={supabase}
       initialSession={pageProps.initialSession}
-			>
-				<main className={inter.className}>
-
-      <Component {...pageProps} />
-				</main>
+    >
+      <main className={inter.className}>
+        <Component {...pageProps} />
+      </main>
     </SessionContextProvider>
   );
 }
