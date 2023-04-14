@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/work"
+      "destination": "/work/supabase-authui"
     }
   ]
 }
